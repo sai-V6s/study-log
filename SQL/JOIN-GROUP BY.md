@@ -5,10 +5,12 @@ JOIN文は複数のテーブルを結合する際に使用する。SELECT文と�
 基本構造  
 SELECT 列1, 列2, ... FROM テーブル1  
 JOIN テーブル2　on テーブル1.共通列 = テーブル2.共通列;  
-例文）account_booksテーブルとcategoriesテーブルを共通列（category_id）で結合。SELECTを用いてこの表から入出金分類名と金額を取得します。    
-`SELECT account_books.id, account_books.inout_date, categories.name, account_books.amount`  
-`FROM account_books`  
-`JOIN categories ON account_books.category_id = categories.id;`  
+例文）account_booksテーブルとcategoriesテーブルを共通列（category_id）で結合。SELECTを用いてこの表から入出金分類名と金額を取得します。 
+```     
+SELECT account_books.id, account_books.inout_date, categories.name, account_books.amount`  
+FROM account_books
+JOIN categories ON account_books.category_id = categories.id;  
+```
 
 【JOINの種類】  
 ・INNER JOIN：結合条件に一致する行だけを返す。  
