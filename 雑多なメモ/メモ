@@ -3,3 +3,24 @@
 ・コンテナが動いているかの確認はdocker psでcontainer ID...と出力されれば動いている。  
 ・docker compose run --rm app bashをcompose.ymlがあるフォルダで実行するとコンテナに入れる。  
 ・開きたいフォルダがある階層でcode . でvscodeでフォルダを展開できる。
+・Rubyの戻り値でのpやputs。pやputsはあくまで画面に出力するというメソッドであり、
+　戻り値は返さない。自動詞。なので、もし戻り値に出力した内容を渡したいのであれば別途変数に出力内容を格納してあげる必要がある。
+　例文）
+　def chapter06_04(runtekun_profile)
+  runtekun_profile.each do |key,value|
+   p "#{key}は、#{value}です。"
+  end
+end
+puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, weight: 25.6 })
+上記の出力では、puts以下でハッシュの内容も丸ごと出力してしまう。
+eachは指定がないとeachの内容をそのまま戻り値に返却する特性がある。
+模範解答）
+def chapter06_04(runtekun_profile)
+  sentence = ''
+  runtekun_profile.each do |key, value|
+    sentence << "#{key}は、#{value}です。"
+  end
+  sentence
+end
+puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, weight: 25.6 })
+一度sentenceという戻り値ようの変数に格納する必要がある。
