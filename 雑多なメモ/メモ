@@ -1,1 +1,5 @@
-・Dockerのコンテナ内部でrubyを実行する場合、rubyの記述と保存はwsl内で行うこと。
+・Dockerのコンテナ内部でrubyを実行する場合、rubyの記述と保存はwsl内で行うこと。  
+・ターミナルでホームに戻るコマンドは cd ~  
+・コンテナが動いているかの確認はdocker psでcontainer ID...と出力されれば動いている。  
+・docker compose run --rm app bashをcompose.ymlがあるフォルダで実行するとコンテナに入れる。  
+・開きたいフォルダがある階層でcode . でvscodeでフォルダを展開できる。
