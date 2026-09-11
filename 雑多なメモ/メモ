@@ -24,3 +24,6 @@ def chapter06_04(runtekun_profile)
 end
 puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, weight: 25.6 })
 一度sentenceという戻り値ようの変数に格納する必要がある。
+・Rubyの""と''の使い分け。
+　ダブルクォーテーション " " は式展開や特殊文字を解釈する。
+　シングルクォーテーション ' ' は基本的にそのまま文字として扱う。
