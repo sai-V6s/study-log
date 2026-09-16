@@ -28,3 +28,7 @@ puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, wei
 　ダブルクォーテーション " " は式展開や特殊文字を解釈する。
 　シングルクォーテーション ' ' は基本的にそのまま文字として扱う。
 ・classを定義する際に引数はいらない。initializeメソッドで引数を定義する。
+・Railsで使われる、link_toとbutton_toの違い。
+　どちらも、ユーザーの操作に対するアクションを実行するための"ヘルパーメソッド"
+　・link_to：HTMLの<a>タグを生成するメソッド<a>タグはURLリンクを司るタグ
+　・botton_to：HTMLの<form>要素とその中の<input type="subit">ボタンを生成
