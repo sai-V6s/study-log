@@ -32,3 +32,8 @@ puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, wei
 　どちらも、ユーザーの操作に対するアクションを実行するための"ヘルパーメソッド"
 　・link_to：HTMLの<a>タグを生成するメソッド<a>タグはURLリンクを司るタグ
 　・botton_to：HTMLの<form>要素とその中の<input type="subit">ボタンを生成
+・LGTMでマージ後のmainを最新化させる方法。
+　git branch
+　git checkout main
+　git pull origin main
+　を順に実行
