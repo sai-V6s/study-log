@@ -2,6 +2,8 @@
 ・ターミナルでホームに戻るコマンドは cd ~  
 ・コンテナが動いているかの確認はdocker psでcontainer ID...と出力されれば動いている。  
 ・docker compose run --rm app bashをcompose.ymlがあるフォルダで実行するとコンテナに入れる。  
+・docker compose up：コンテナを立ち上げた状態にする
+・docker compose exec web bin/dev：.CSS, JavaScript用のサーバーを立ち上げ状態にする
 ・開きたいフォルダがある階層でcode . でvscodeでフォルダを展開できる。
 ・Rubyの戻り値でのpやputs。pやputsはあくまで画面に出力するというメソッドであり、
 　戻り値は返さない。自動詞。なので、もし戻り値に出力した内容を渡したいのであれば別途変数に出力内容を格納してあげる必要がある。
@@ -37,3 +39,9 @@ puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, wei
 　git checkout main
 　git pull origin main
 　を順に実行
+・dbのマイグレーション。DBが存在しないとエラーメッセージがRailsコンソールで出力された場合、
+　DBのマイグレーションができているかを疑ってみる。
+　コンテナ内で、dbのマイグレーションのステータスを確認するコマンドを実行して確認する。
+　Schema migrations table does not exist yet.のようにマイグレーションがまだないですよ。
+　と返却された場合、マイグレーションをする必要がある。
+　マイグレーションとはマイグレーションファイルというdbの設計図からdbを作り出すこと。
