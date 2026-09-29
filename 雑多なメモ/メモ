@@ -45,3 +45,15 @@ puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, wei
 　Schema migrations table does not exist yet.のようにマイグレーションがまだないですよ。
 　と返却された場合、マイグレーションをする必要がある。
 　マイグレーションとはマイグレーションファイルというdbの設計図からdbを作り出すこと。
+・Railsコンソールからテーブルのカラム名を確認するコマンド
+  User.attribute_names
+・管理者権限で保存できない原因
+　Dockerコンテナを立ち上げているため、ファイルの管理者はDockerのrootになる。
+　しかし、wslで作業しているのはsaiである。ここでねじれが発生してしまう。
+上記原因なのかはls -l ファイルの階層(dbマイグレーションファイル例：ls -l db/migrate/)で確かめることができる。
+[対処法①]階層内のすべてのファイルの所有者をsaiにする
+sudo chown -R sai:sai db/migrate
+コマンドを実行する(db/migrateの例)
+[対処法②]すべてのファイルは恐いので、該当ファイルを指定して所有者をsaiにする
+sudo chown sai:sai db/migrate/20260929110000_add_tel_to_users.rb
+コマンドを実行(db/migrate/20260929110000_add_tel_to_users.rb階層内のファイルのパスまで指定する例)
