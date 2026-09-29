@@ -2,7 +2,7 @@
 ・ターミナルでホームに戻るコマンドは cd ~  
 ・コンテナが動いているかの確認はdocker psでcontainer ID...と出力されれば動いている。  
 ・docker compose run --rm app bashをcompose.ymlがあるフォルダで実行するとコンテナに入れる。  
-・docker compose up：コンテナを立ち上げた状態にする
+・docker compose up (-d)：コンテナを立ち上げた状態にする-dが無い場合はログが表示される
 ・docker compose exec web bin/dev：.CSS, JavaScript用のサーバーを立ち上げ状態にする
 ・開きたいフォルダがある階層でcode . でvscodeでフォルダを展開できる。
 ・Rubyの戻り値でのpやputs。pやputsはあくまで画面に出力するというメソッドであり、
