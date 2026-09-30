@@ -4,6 +4,7 @@
 ・docker compose run --rm app bashをcompose.ymlがあるフォルダで実行するとコンテナに入れる。  
 ・docker compose up (-d)：コンテナを立ち上げた状態にする-dが無い場合はログが表示される
 ・docker compose exec web bin/dev：.CSS, JavaScript用のサーバーを立ち上げ状態にする
+・docker compose exec web bash：コンテナに入る
 ・開きたいフォルダがある階層でcode . でvscodeでフォルダを展開できる。
 ・Rubyの戻り値でのpやputs。pやputsはあくまで画面に出力するというメソッドであり、
 　戻り値は返さない。自動詞。なので、もし戻り値に出力した内容を渡したいのであれば別途変数に出力内容を格納してあげる必要がある。
