@@ -74,3 +74,5 @@ sudo chown sai:sai db/migrate/20260929110000_add_tel_to_users.rb
 　git statusでステージ領域に上がっているかを確認
 　git commit -m 'メッセージ'でステージ領域の内容をコミット
 　git push origin 作業ブランチ名で変更内容をプッシュして変更内容を他の開発者と共有する。
+・安全ナビゲーション演算子
+　ユーザー情報を照合した際に結果がnilだった場合に、システム自体がエラーになることを防ぐ
