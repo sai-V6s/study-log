@@ -167,3 +167,7 @@ id	term_id	curriculum_id
 3	12	3
 4	13	5
 *************************
+
+すべてのviewはviews/layouts/application.html.erbファイルを大元としている。
+そのため、大本のapplication.html.erbのbodyにクラスを設定して、内容を反映させると、
+他のviewにも共通して反映されることになる。
