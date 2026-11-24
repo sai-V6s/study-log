@@ -48,6 +48,7 @@ puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, wei
 　マイグレーションとはマイグレーションファイルというdbの設計図からdbを作り出すこと。
 ・Railsコンソールからテーブルのカラム名を確認するコマンド
   User.attribute_names
+
 ★管理者権限で保存できない原因
 　Dockerコンテナを立ち上げているため、ファイルの管理者はDockerのrootになる。
 　しかし、wslで作業しているのはsaiである。ここでねじれが発生してしまう。
@@ -58,6 +59,7 @@ sudo chown -R sai:sai db/migrate
 [対処法②]すべてのファイルは恐いので、該当ファイルを指定して所有者をsaiにする
 sudo chown sai:sai db/migrate/20260929110000_add_tel_to_users.rb
 コマンドを実行(db/migrate/20260929110000_add_tel_to_users.rb階層内のファイルのパスまで指定する例)
+
 ・ActiveRecordとマイグレーションの役割と使い分け
 　ActiveRecordはその名の通り基本的にDBの中身のレコードを操作する
 　対してマイグレーションはDBの枠組みと内部の構造を定義する。
