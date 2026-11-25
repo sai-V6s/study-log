@@ -62,3 +62,7 @@ HTMLのaタグを生成する。
 <% end %>
 </div>
 ```
+
+【if logged_in?】view  
+ログイン状態の真偽判定を行う  
+trueがログイン状態、falseがログイン前  

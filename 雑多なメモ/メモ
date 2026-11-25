@@ -35,11 +35,6 @@ puts chapter06_04({ name: 'らんてくん', birthday: '7月8日', tall: 80, wei
 　どちらも、ユーザーの操作に対するアクションを実行するための"ヘルパーメソッド"
 　・link_to：HTMLの<a>タグを生成するメソッド<a>タグはURLリンクを司るタグ
 　・botton_to：HTMLの<form>要素とその中の<input type="subit">ボタンを生成
-・LGTMでマージ後のmainを最新化させる方法。
-　git branch
-　git checkout main
-　git pull origin main
-　を順に実行
 ・dbのマイグレーション。DBが存在しないとエラーメッセージがRailsコンソールで出力された場合、
 　DBのマイグレーションができているかを疑ってみる。
 　コンテナ内で、dbのマイグレーションのステータスを確認するコマンドを実行して確認する。
@@ -69,13 +64,18 @@ sudo chown sai:sai db/migrate/20260929110000_add_tel_to_users.rb
 　シンボルとは、「：age?」のように外部のメソッドに条件を記述し、参照する際に使用する。「:」が目印  
 　Prcoとは、外部ではなく条件付きバリデーションの後ろで直接条件を記述する。
 　配列は複数条件がある際に使用する。15歳以上かつ男のように。
-・プルリクエストの送信方法
+★プルリクエストの送信方法
 　git branchで作業しているブランチにいるか確認
 　git statusで変更箇所を確認
 　git addで変更したファイルをステージ領域にあげる
 　git statusでステージ領域に上がっているかを確認
 　git commit -m 'メッセージ'でステージ領域の内容をコミット
 　git push origin 作業ブランチ名で変更内容をプッシュして変更内容を他の開発者と共有する。
+・LGTMでマージ後のmainを最新化させる方法。
+　git branch
+　git checkout main
+　git pull origin main
+　を順に実行
 ・安全ナビゲーション演算子
 　ユーザー情報を照合した際に結果がnilだった場合に、システム自体がエラーになることを防ぐ
 Action Textについて
@@ -174,3 +174,10 @@ id	term_id	curriculum_id
 すべてのviewはviews/layouts/application.html.erbファイルを大元としている。
 そのため、大本のapplication.html.erbのbodyにクラスを設定して、内容を反映させると、
 他のviewにも共通して反映されることになる。
+
+【保留中のマイグレーションがありエラーになった場合】
+Railsには開発用の development とテスト用の test など、環境ごとに別のデータベースがある
+statusでどちらかがupになっていない可能性がある。
+↓testのマイグレーション状況の確認
+docker compose exec web bundle exec rails db:migrate:status RAILS_ENV=test
+docker compose exec web bundle exec rails db:migrate RAILS_ENV=test
