@@ -17,7 +17,7 @@ schema.rbファイルはマイグレーションが適用された後の最新�
 ・rails db:create：DBを作成する。  
 ・rails db:migrate：マイグレーションファイルをDBに適用する。  
 ・rails db:migrate:reset：上記3つの削除～適用までを一連で行ってくれる。  
-・rails db:rollback：DBに反映されている最新のマイグレーションファイルを一つロールバック(一つ戻る)させる。  
+・rails db:rollback STEP1：DBに反映されている最新のマイグレーションファイルを一つロールバック(STEP1は一つ戻る)させる。  
 ・rails db:migrate:status：マイグレーションファイルの適用状況を確認できる。  upとなっているマイグレーションファイルは適用済み、downは未適用を表す。  
 ・RAILS_ENV=test：テスト環境でコマンドが認識されない場合コマンドの後ろに付けることで実行可能にできる。  
 ・rails generate migration Xxxxx：マイグレーションファイルを作成するコマンド。  
