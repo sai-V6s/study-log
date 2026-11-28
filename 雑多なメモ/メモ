@@ -181,3 +181,8 @@ statusでどちらかがupになっていない可能性がある。
 ↓testのマイグレーション状況の確認
 docker compose exec web bundle exec rails db:migrate:status RAILS_ENV=test
 docker compose exec web bundle exec rails db:migrate RAILS_ENV=test
+
+外に切り出すリスト
+・パーシャル
+・Decorator
+・helper
